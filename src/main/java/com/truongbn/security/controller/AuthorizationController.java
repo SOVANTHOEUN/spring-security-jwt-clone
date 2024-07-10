@@ -1,6 +1,7 @@
 package com.truongbn.security.controller;
 
 import com.truongbn.security.service.impl.UserServiceImpl;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,6 +14,7 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("/api/v1/resource")
+@Tag(name = "Authorization Controller")
 @RequiredArgsConstructor
 public class AuthorizationController {
     @Autowired

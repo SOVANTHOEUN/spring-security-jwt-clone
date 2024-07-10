@@ -6,7 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.truongbn.security.dao.request.SignUpRequest;
-import com.truongbn.security.dao.request.SigninRequest;
+import com.truongbn.security.dao.request.SignInRequest;
 import com.truongbn.security.dao.response.JwtAuthenticationResponse;
 import com.truongbn.security.entities.Role;
 import com.truongbn.security.entities.User;
@@ -34,7 +34,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     @Override
-    public JwtAuthenticationResponse signin(SigninRequest request) {
+    public JwtAuthenticationResponse signin(SignInRequest request) {
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
         var user = userRepository.findByEmail(request.getEmail())
